@@ -56,7 +56,8 @@
             </div>
             <div class="search-results" id="searchResultsMobile"></div>
           </div>
-          <a href="/cart" class="cart-link">CART [{{ cart.item_count }}]</a>
+		  <button class="cart-link cart-toggle">CART [{{ cart.item_count }}]</button>
+          {% comment %} <a href="/cart" class="cart-link">CART [{{ cart.item_count }}]</a> {% endcomment %}
         </div>
         <nav class="mobile-menu" id="mobileMenu">
           <a href="{{ routes.root_url }}">ALL</a>
@@ -74,7 +75,50 @@
       </main>
 
     </div>
-	
+	<div class="cart-overlay" id="cartOverlay"></div>
+
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-header">
+    <span>CART [<span id="cartCount">{{ cart.item_count }}</span>]</span>
+    <button class="cart-close" id="cartClose"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+
+  <div class="cart-drawer-items" id="cartItems">
+    {% if cart.item_count == 0 %}
+      <p class="cart-empty">YOUR BAG IS EMPTY</p>
+    {% else %}
+      {% for item in cart.items %}
+        <div class="cart-item" data-key="{{ item.key }}">
+          <div class="cart-item-image">
+            <img src="{{ item.image | img_url: 'small' }}" alt="{{ item.title }}" />
+          </div>
+          <div class="cart-item-info">
+            <div class="cart-item-name">{{ item.product.title }}</div>
+            {% unless item.variant.title == 'Default Title' %}
+              <div class="cart-item-variant">{{ item.variant.title }}</div>
+            {% endunless %}
+            <div class="cart-item-price">{{ item.price | money_without_currency }} USD</div>
+            <div class="cart-item-qty">
+              <button class="qty-btn" data-key="{{ item.key }}" data-qty="{{ item.quantity | minus: 1 }}">−</button>
+              <span>{{ item.quantity }}</span>
+              <button class="qty-btn" data-key="{{ item.key }}" data-qty="{{ item.quantity | plus: 1 }}">+</button>
+            </div>
+          </div>
+          <button class="cart-item-remove" data-key="{{ item.key }}"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+
+  <div class="cart-drawer-footer">
+    <div class="cart-subtotal">
+      <span>SUBTOTAL</span>
+      <span id="cartSubtotal">{{ cart.total_price | money_without_currency }} USD</span>
+    </div>
+    <a href="/checkout" class="cart-checkout-btn">CHECKOUT</a>
+    {% comment %} <a href="/cart" class="cart-view-link">VIEW FULL CART</a> {% endcomment %}
+  </div>
+</div>
     {{ 'app.js' | asset_url | script_tag }}
   </body>
 </html>
