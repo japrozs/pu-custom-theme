@@ -251,3 +251,27 @@ document.querySelectorAll(".btn-add-to-cart").forEach((btn) => {
 		}, 500);
 	});
 });
+
+// Add to cart
+const productForm = document.querySelector(".product-actions form");
+if (productForm) {
+	productForm.addEventListener("submit", (e) => {
+		e.preventDefault();
+		const variantId = document.getElementById("variantId").value;
+
+		fetch("/cart/add.js", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({ id: parseInt(variantId), quantity: 1 }),
+		})
+			.then((res) => {
+				if (!res.ok) throw new Error("Failed to add to cart");
+				return res.json();
+			})
+			.then(() => {
+				updateCart();
+				openCart();
+			})
+			.catch((err) => console.error("Error adding to cart:", err));
+	});
+}
