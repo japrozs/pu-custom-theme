@@ -1,0 +1,13 @@
+{% comment %} <img src="{{ '' | asset_url }}" class="banner" alt="Banner" /> {% endcomment %}
+{% comment %} <img src="{{ 'https://cdn.shopify.com/s/files/1/0968/9579/5505/files/banner.png?v=1778470544' | asset_url }}" class="banner" alt="Banner" /> {% endcomment %}
+
+{% comment %} <picture>
+  <source media="(max-width: 950px)" srcset="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/banner-mobile.png?v=1778604904" />
+  <img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/banner.png?v=1778470544" class="banner" alt="Banner" />
+</picture> {% endcomment %}
+
+<picture>
+  <source media="(max-width: 480px)" srcset="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/banner-mobile-sm.png?v=1778645567" />
+  <source media="(max-width: 950px)" srcset="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/banner-mobile.png?v=1778604904" />
+  <img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/banner.png?v=1778470544" class="banner" alt="Banner" />
+</picture>

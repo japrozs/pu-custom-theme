@@ -1,0 +1,20 @@
+[
+	{
+		"name": "theme_info",
+		"theme_name": "Primary Union",
+		"theme_version": "1.0.0",
+		"theme_author": "Primary Union",
+		"theme_documentation_url": "https://japroz.me",
+		"theme_support_url": "https://japroz.me"
+	},
+	{
+		"name": "Logo",
+		"settings": [
+			{
+				"type": "image_picker",
+				"id": "logo",
+				"label": "Logo image"
+			}
+		]
+	}
+]

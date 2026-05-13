@@ -1,0 +1,25 @@
+{% assign collection = collections.all %}
+
+{% render 'banner' %}
+{% render 'topbar', title: 'ALL PRODUCTS' %}
+
+<div class="products">
+  {% for product in collection.products %}
+    <div class="card">
+      <a href="{{ product.url }}">
+        <div class="image-box">
+          {% if product.featured_image %}
+            <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}" />
+          {% endif %}
+        </div>
+        <div class="product-name">
+          {{ product.title }}
+          {% unless product.available %}
+            <span class="status">[sold out]</span>
+          {% endunless %}
+        </div>
+        <div class="price">{{ product.price | money_without_currency }} USD</div>
+      </a>
+    </div>
+  {% endfor %}
+</div>

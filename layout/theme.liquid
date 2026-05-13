@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ shop.name }}</title>
+    {% comment %} <title>{{ page_title }} | {{ shop.name }}</title> {% endcomment %}
+    {{ content_for_header }}
+    <link href="https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    {{ 'styles.css' | asset_url | stylesheet_tag }}
+  </head>
+  <body>
+    <div class="page">
+
+      <!-- DESKTOP SIDEBAR -->
+      <aside class="sidebar">
+        <div class="logo">
+          <a href="/">
+            <img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/logo-text.png?v=1778470618" alt="{{ shop.name }}" />
+          </a>
+        </div>
+        <nav class="menu">
+          <a href="{{ routes.root_url }}">ALL</a>
+          <a href="/pages/archive">ARCHIVE</a>
+          <a href="/pages/manifesto">MANIFESTO</a>
+        </nav>
+        <nav class="menu">
+          <a href="/blogs/journal">JOURNAL</a>
+          <a href="/pages/about">ABOUT</a>
+          <a href="https://www.instagram.com/" target="_blank">INSTAGRAM</a>
+          <a href="/policies/privacy-policy">PRIVACY POLICY</a>
+        </nav>
+        <div class="bottom">
+          <img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/bootpu.png?v=1778470582" alt="" />
+        </div>
+      </aside>
+
+      <!-- MOBILE NAVBAR -->
+      <header class="mobile-nav">
+        <div class="mobile-nav-top">
+          <div class="mobile-logo">
+            <a href="/">
+              <img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/logo-text.png?v=1778470618" alt="{{ shop.name }}" />
+            </a>
+          </div>
+          <button class="hamburger" id="hamburger" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+        <div class="mobile-nav-bottom">
+          <div class="search-wrapper">
+            <div class="search-bar">
+              <input type="text" placeholder="SEARCH PRODUCTS" class="search-input" id="searchInputMobile" />
+              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            </div>
+            <div class="search-results" id="searchResultsMobile"></div>
+          </div>
+          <a href="/cart" class="cart-link">CART [{{ cart.item_count }}]</a>
+        </div>
+        <nav class="mobile-menu" id="mobileMenu">
+          <a href="{{ routes.root_url }}">ALL</a>
+          <a href="/pages/archive">ARCHIVE</a>
+          <a href="/pages/manifesto">MANIFESTO</a>
+          <a href="/blogs/journal">JOURNAL</a>
+          <a href="/pages/about">ABOUT</a>
+          <a href="https://www.instagram.com/" target="_blank">INSTAGRAM</a>
+          <a href="/policies/privacy-policy">PRIVACY POLICY</a>
+        </nav>
+      </header>
+
+      <main class="main">
+        {{ content_for_layout }}
+      </main>
+
+    </div>
+	
+    {{ 'app.js' | asset_url | script_tag }}
+  </body>
+</html>
