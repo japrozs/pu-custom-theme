@@ -206,7 +206,7 @@ function updateCart() {
               <button class="qty-btn" data-key="${item.key}" data-qty="${item.quantity + 1}">+</button>
             </div>
           </div>
-          <button class="cart-item-remove" data-key="${item.key}"><i class="fa-solid fa-xmark"></i></button>
+          <button class="cart-item-remove" data-key="${item.key}"><i class="fa-regular fa-minus"></i></button>
         </div>
       `,
 				)

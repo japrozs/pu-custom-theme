@@ -1029,3 +1029,7 @@ body {
 .cart-item-remove i {
 	font-size: 14px;
 }
+
+.alt-lang {
+	font-size: 100%;
+}

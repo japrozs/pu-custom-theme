@@ -85,7 +85,9 @@
 
   <div class="cart-drawer-items" id="cartItems">
     {% if cart.item_count == 0 %}
-      <p class="cart-empty">YOUR BAG IS EMPTY</p>
+      <p class="cart-empty">"YOUR BAG IS EMPTY"</p>
+      <p class="cart-empty alt-lang">ਤੁਹਾਡਾ ਬੈਗ ਖਾਲੀ ਹੈ।</p>
+      <p class="cart-empty alt-lang">حقيبتك فارغة</p>
     {% else %}
       {% for item in cart.items %}
         <div class="cart-item" data-key="{{ item.key }}">
