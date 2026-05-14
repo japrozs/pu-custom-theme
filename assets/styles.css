@@ -432,8 +432,8 @@ body {
 }
 
 .product-title {
-	font-size: 28px;
-	font-weight: 700;
+	font-size: 30px;
+	font-weight: 800;
 	text-transform: uppercase;
 	letter-spacing: 0.3px;
 }
@@ -490,6 +490,8 @@ body {
 	text-transform: uppercase;
 	cursor: pointer;
 	padding: 0 10px;
+	color: #000;
+	-webkit-appearance: none;
 }
 
 .size-btn:hover {
