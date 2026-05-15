@@ -20,16 +20,16 @@
           </a>
         </div>
         <nav class="menu">
-          <a href="{{ routes.root_url }}" class="sq-1">ALL</a>
-          <a href="/pages/archive" class="sq-2">ARCHIVE</a>
-          <a href="/pages/manifesto" class="sq-3">MANIFESTO</a>
-        </nav>
-        <nav class="menu">
-          <a href="/blogs/journal" class="sq-4">JOURNAL</a>
-          <a href="/pages/about" class="sq-5">ABOUT</a>
-          <a href="https://www.instagram.com/" target="_blank" class="sq-6">INSTAGRAM</a>
-          <a href="/policies/privacy-policy" class="sq-7">PRIVACY POLICY</a>
-        </nav>
+			<a href="{{ routes.root_url }}" class="sq-1 {% if template.name == 'index' %}active-link{% endif %}">ALL</a>
+			<a href="/pages/archive" class="sq-2 {% if page.handle == 'archive' %}active-link{% endif %}">ARCHIVE</a>
+			<a href="/pages/manifesto" class="sq-3 {% if page.handle == 'manifesto' %}active-link{% endif %}">MANIFESTO</a>
+		</nav>
+		<nav class="menu">
+			<a href="/blogs/journal" class="sq-4 {% if template.name == 'blog' %}active-link{% endif %}">JOURNAL</a>
+			<a href="/pages/about" class="sq-5 {% if page.handle == 'about' %}active-link{% endif %}">ABOUT</a>
+			<a href="https://www.instagram.com/" target="_blank" class="sq-6">INSTAGRAM</a>
+			<a href="/policies/privacy-policy" class="sq-7 {% if template.name == 'policy' %}active-link{% endif %}">PRIVACY POLICY</a>
+		</nav>
         <div class="bottom">
           <img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/bootpu.png?v=1778470582" alt="" />
         </div>
