@@ -275,3 +275,72 @@ if (productForm) {
 			.catch((err) => console.error("Error adding to cart:", err));
 	});
 }
+
+const MORSE = {
+	a: ".-",
+	b: "-...",
+	c: "-.-.",
+	d: "-..",
+	e: ".",
+	f: "..-.",
+	g: "--.",
+	h: "....",
+	i: "..",
+	j: ".---",
+	k: "-.-",
+	l: ".-..",
+	m: "--",
+	n: "-.",
+	o: "---",
+	p: ".--.",
+	q: "--.-",
+	r: ".-.",
+	s: "...",
+	t: "-",
+	u: "..-",
+	v: "...-",
+	w: ".--",
+	x: "-..-",
+	y: "-.--",
+	z: "--..",
+	" ": " ",
+};
+
+// morse code display settings
+const dot = 2; // size of a dot
+const dash = 4; // size of a dash
+const symbolGap = 3; // gap between symbols within a letter
+const letterGap = 8; // gap between letters
+const wordGap = 8; // gap between words
+const strokeWidth = 2.5; // thickness of the line
+const strokeColor = encodeURIComponent("#ff0000"); // just change #111 to any color
+
+function nameToStrokeDasharray(name) {
+	let pattern = [];
+
+	for (const char of name.toLowerCase().replace(/\s+/g, "")) {
+		if (char === " ") {
+			if (pattern.length > 0) {
+				pattern[pattern.length - 1] += wordGap;
+			}
+			continue;
+		}
+		const morse = MORSE[char];
+		if (!morse) continue;
+		for (let i = 0; i < morse.length; i++) {
+			pattern.push(morse[i] === "." ? dot : dash);
+			pattern.push(i < morse.length - 1 ? symbolGap : letterGap);
+		}
+	}
+
+	return pattern.join(",");
+}
+
+document.querySelectorAll(".card").forEach((card) => {
+	const name = card
+		.querySelector(".product-name")
+		.childNodes[0].textContent.trim();
+	const dasharray = nameToStrokeDasharray(name + " * FUCK THE RULES");
+	const svg = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Crect width='100%25' height='100%25' fill='none' stroke='${strokeColor}' stroke-width='${strokeWidth}' stroke-dasharray='${dasharray}'/%3E%3C/svg%3E")`;
+	card.querySelector(".image-box").style.backgroundImage = svg;
+});

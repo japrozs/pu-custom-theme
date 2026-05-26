@@ -259,7 +259,10 @@ body {
 }
 
 .menu a:hover {
-	opacity: 0.6;
+	text-decoration: underline;
+	text-decoration-style: dotted;
+	text-decoration-color: #b8b8b8;
+	text-decoration-thickness: 2px;
 }
 
 /* SEARCH */
@@ -1093,7 +1096,6 @@ body {
 }
 .sq-5::before {
 	background: #30a889;
-	/* background: linear-gradient(to bottom right, #000 50%, #fff 50%); */
 }
 .sq-6::before {
 	background: linear-gradient(to bottom right, #e56969 50%, #8a49a1 50%);
@@ -1107,4 +1109,50 @@ body {
 	text-decoration-style: dotted;
 	text-decoration-color: #ff1b4d;
 	text-decoration-thickness: 2px;
+}
+
+/* MANIFESTO */
+.manifesto-page {
+	font-size: 13px;
+	font-weight: 600;
+	margin-top: 20px;
+	line-height: 2;
+	letter-spacing: 0.3px;
+}
+
+.manifesto-images {
+	display: flex;
+	flex-direction: row;
+	gap: 25px;
+	max-width: 800px;
+}
+
+.manifesto-image-box {
+	flex: 1;
+	min-width: 0;
+}
+
+.manifesto-image-box img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+@media (max-width: 768px) {
+	.manifesto-images {
+		flex-direction: column;
+		max-width: 100%;
+	}
+
+	.manifesto-image-box img {
+		max-height: 400px;
+		object-fit: contain;
+	}
+}
+
+.image-box {
+	background: #fbfbfb;
+	margin-bottom: 12px;
+	position: relative;
+	color: red;
 }
