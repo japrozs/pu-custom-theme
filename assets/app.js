@@ -313,7 +313,7 @@ const symbolGap = 3; // gap between symbols within a letter
 const letterGap = 8; // gap between letters
 const wordGap = 8; // gap between words
 const strokeWidth = 2.5; // thickness of the line
-const strokeColor = encodeURIComponent("#ff0000"); // just change #111 to any color
+const strokeColor = encodeURIComponent("#ddd"); // just change #111 to any color
 
 function nameToStrokeDasharray(name) {
 	let pattern = [];

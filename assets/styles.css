@@ -776,11 +776,11 @@ body {
 	}
 }
 
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
 	.products {
 		grid-template-columns: 1fr;
 	}
-}
+} */
 
 .back-link {
 	text-decoration: none;
@@ -1115,7 +1115,7 @@ body {
 .manifesto-page {
 	font-size: 13px;
 	font-weight: 600;
-	margin-top: 20px;
+	margin-top: 0px;
 	line-height: 2;
 	letter-spacing: 0.3px;
 }
@@ -1155,4 +1155,15 @@ body {
 	margin-bottom: 12px;
 	position: relative;
 	color: red;
+}
+
+.manifesto-image {
+	width: 100%;
+	max-width: 900px;
+	height: auto;
+	display: block;
+}
+
+.manifesto-material {
+	margin-top: 8px;
 }
