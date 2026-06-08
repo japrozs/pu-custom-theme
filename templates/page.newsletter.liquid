@@ -1,0 +1,27 @@
+{% render 'banner' %}
+{% render 'topbar', title: 'MAILING LIST	' %}
+<div class="newsletter-page">
+	<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/banner-newsletter-smol.png?v=1780900580" alt="Hopes and Dreams" class="manifesto-image" />
+	{% comment %} <img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/banner-newsletter.png?v=1780899119" alt="Hopes and Dreams" class="manifesto-image" /> {% endcomment %}
+	<div class="newsletter-form">
+		<p class="newsletter-label">enter your email to be a part of the union</p>
+		{% form 'customer' %}
+			<input type="hidden" name="contact[tags]" value="newsletter" />
+			<input
+				type="email"
+				name="contact[email]"
+				class="newsletter-input"
+				placeholder="YOUR EMAIL"
+				required
+			/>
+			<p class="newsletter-consent">i understand that i can opt out at any time</p>
+			<button type="submit" class="newsletter-submit">JOIN THE UNION</button>
+			{% if form.posted_successfully? %}
+				<p class="newsletter-error">SUCCESSFULLY JOINED THE UNION</p>
+			{% endif %}
+			{% if form.errors %}
+				<p class="newsletter-error">{{ form.errors | default_errors }}</p>
+			{% endif %}
+		{% endform %}
+	</div>
+</div>

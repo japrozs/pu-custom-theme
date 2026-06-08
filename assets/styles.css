@@ -1,3 +1,5 @@
+@import url("https://fonts.cdnfonts.com/css/menlo");
+
 * {
 	margin: 0;
 	padding: 0;
@@ -14,6 +16,10 @@ Source - https://stackoverflow.com/q/10578073
 Posted by Bhaxy, modified by community. See post 'Timeline' for change history
 Retrieved 2026-05-27, License - CC BY-SA 4.0
 */
+
+.menlo {
+	font-family: "Menlo";
+}
 
 ::selection {
 	background: #ff1b4d;
@@ -638,6 +644,7 @@ body {
 }
 
 .accordion-body {
+	font-family: "Menlo";
 	display: none;
 	font-size: 12px;
 	line-height: 1.45;
@@ -1216,7 +1223,7 @@ body {
 }
 
 .red {
-	color: #ff1b4d;
+	color: #ff1b4d !important;
 }
 
 .gray {
@@ -1234,9 +1241,140 @@ body {
 .about-caption {
 	font-size: 13px;
 	text-transform: uppercase;
-	max-width: 500px;
 }
 
 .bottom-banner {
 	margin-top: 50px !important;
+}
+
+.policy-page {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+	max-width: 800px;
+}
+
+.policy-item {
+	display: flex;
+	gap: 40px;
+	padding: 14px 0;
+	border-bottom: 1px solid #f0f0f0;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 0.2px;
+	line-height: 1.6;
+}
+
+.policy-key {
+	width: 180px;
+	flex-shrink: 0;
+	font-weight: 600;
+}
+
+.policy-value {
+	color: #444;
+}
+
+.policy-value a {
+	color: #000;
+	text-decoration: underline;
+}
+
+.policy-value a:hover {
+	opacity: 0.6;
+}
+
+.policy-last-updated {
+	font-size: 12px;
+	color: #999;
+	text-transform: uppercase;
+	letter-spacing: 0.2px;
+	padding-bottom: 14px;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.newsletter-form {
+	display: flex;
+	flex-direction: column;
+	max-width: 500px;
+	margin-top: 20px;
+}
+
+.newsletter-label {
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 0.2px;
+}
+
+.newsletter-input {
+	font-family: "Neue Haas Grotesk Display Pro", "Helvetica Neue", sans-serif;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.4px;
+	border: 1px solid #000;
+	padding: 11px 12px;
+	background: transparent;
+	outline: none;
+	width: 100%;
+	margin-top: 10px;
+	color: #000;
+}
+
+.newsletter-input::placeholder {
+	opacity: 0.4;
+}
+
+.newsletter-consent {
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.2px;
+	margin: 10px 0px;
+	font-family: "Menlo";
+	color: #888;
+}
+
+.newsletter-submit {
+	font-family: "Neue Haas Grotesk Display Pro", "Helvetica Neue", sans-serif;
+	font-size: 13px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	background: #000;
+	background-image: url("https://cdn.shopify.com/s/files/1/0968/9579/5505/files/button-bg-red.png?v=1778777696");
+	background-size: cover;
+	background-position: center;
+	color: #fff;
+	border: none;
+	padding: 13px;
+	cursor: pointer;
+	width: 100%;
+	position: relative;
+}
+
+.newsletter-submit:hover::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.2);
+}
+
+.newsletter-submit:hover {
+	opacity: 0.85;
+}
+
+.newsletter-success {
+	font-size: 14px;
+	margin-top: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.3px;
+	color: #ff1b4d;
+}
+
+.newsletter-error {
+	font-size: 14px;
+	margin-top: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.3px;
+	color: #ff1b4d;
 }
