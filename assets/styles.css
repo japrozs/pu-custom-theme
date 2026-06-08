@@ -9,6 +9,49 @@
 	-ms-overflow-style: none;
 }
 
+/*
+Source - https://stackoverflow.com/q/10578073
+Posted by Bhaxy, modified by community. See post 'Timeline' for change history
+Retrieved 2026-05-27, License - CC BY-SA 4.0
+*/
+
+::selection {
+	background: #ff1b4d;
+	color: black;
+	text-shadow: none;
+}
+
+::-moz-selection {
+	background: #ff1b4d;
+	color: #eee;
+	text-shadow: none;
+}
+
+body,
+img,
+button,
+.no-select {
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE10/IE11 */
+	user-select: none; /* Standard */
+}
+
+/* Re-enable selection specifically for text containers */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+article,
+a,
+.selectable-text {
+	-webkit-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
+}
+
 *::-webkit-scrollbar {
 	display: none;
 }
@@ -435,9 +478,9 @@ body {
 }
 
 .product-title {
-	font-size: 30px;
-	font-weight: 800;
-	text-transform: uppercase;
+	font-size: 35px;
+	font-weight: 600;
+	text-transform: lowercase;
 	letter-spacing: 0.3px;
 }
 
@@ -1104,6 +1147,10 @@ body {
 	background: linear-gradient(to bottom right, #f8b300 50%, #000 50%);
 }
 
+.sq-8::before {
+	background: linear-gradient(to top right, #ffdbac 50%, #ff1b4d 50%);
+}
+
 .menu a.active-link {
 	text-decoration: underline;
 	text-decoration-style: dotted;
@@ -1166,4 +1213,30 @@ body {
 
 .manifesto-material {
 	margin-top: 8px;
+}
+
+.red {
+	color: #ff1b4d;
+}
+
+.gray {
+	color: #ddd;
+}
+
+.about-image {
+	width: 100%;
+	max-width: 400px;
+	height: auto;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.about-caption {
+	font-size: 13px;
+	text-transform: uppercase;
+	max-width: 500px;
+}
+
+.bottom-banner {
+	margin-top: 50px !important;
 }

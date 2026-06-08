@@ -342,5 +342,6 @@ document.querySelectorAll(".card").forEach((card) => {
 		.childNodes[0].textContent.trim();
 	const dasharray = nameToStrokeDasharray(name + " * FUCK THE RULES");
 	const svg = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Crect width='100%25' height='100%25' fill='none' stroke='${strokeColor}' stroke-width='${strokeWidth}' stroke-dasharray='${dasharray}'/%3E%3C/svg%3E")`;
+	console.log(svg);
 	card.querySelector(".image-box").style.backgroundImage = svg;
 });
