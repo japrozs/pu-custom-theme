@@ -1244,7 +1244,7 @@ body {
 }
 
 .bottom-banner {
-	margin-top: 50px !important;
+	margin-top: 50px;
 }
 
 .policy-page {
@@ -1377,4 +1377,10 @@ body {
 	text-transform: uppercase;
 	letter-spacing: 0.3px;
 	color: #ff1b4d;
+}
+
+@media (max-width: 500px) {
+	.bottom-banner {
+		margin-top: 12px !important;
+	}
 }
