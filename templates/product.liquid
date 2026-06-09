@@ -85,7 +85,7 @@
           CARE AND MAINTENANCE <i class="fa-solid fa-plus"></i>
         </button>
         <div class="accordion-body">
-          {{ product.metafields.custom.care_instructions }}
+          {{ product.metafields.custom.care_instructions | metafield_tag }}
         </div>
       </div>
       <div class="accordion">
@@ -93,7 +93,7 @@
           SIZE AND FIT <i class="fa-solid fa-plus"></i>
         </button>
         <div class="accordion-body">
-          {{ product.metafields.custom.size_and_fit }}
+          {{ product.metafields.custom.size_and_fit | metafield_tag}}
         </div>
       </div>
     </div>

@@ -148,7 +148,7 @@ body {
 .status {
 	font-size: 13px;
 	text-transform: uppercase;
-	color: red;
+	color: #ff1b4d;
 }
 
 /* PASSWORD */
@@ -412,7 +412,7 @@ body {
 }
 
 .result-status {
-	color: red;
+	color: #ff1b4d;
 }
 
 .result-empty {
@@ -706,12 +706,12 @@ body {
 .countdown-value {
 	font-size: 1.15rem;
 	font-family: "Menlo", monospace;
-	color: red;
+	color: #ff1b4d;
 	font-variant-numeric: tabular-nums;
 }
 
 .countdown-letter {
-	color: red;
+	color: #ff1b4d;
 }
 
 /* MOBILE NAV */
@@ -1383,4 +1383,14 @@ body {
 	.bottom-banner {
 		margin-top: 12px !important;
 	}
+}
+
+.page {
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+.topbar {
+	max-width: 1440px;
+	margin: 0 auto;
 }

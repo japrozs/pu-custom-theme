@@ -345,3 +345,9 @@ document.querySelectorAll(".card").forEach((card) => {
 	console.log(svg);
 	card.querySelector(".image-box").style.backgroundImage = svg;
 });
+
+document.querySelectorAll("li").forEach((li) => {
+	if (li.textContent.trim() === "FTR") {
+		li.style.color = "#ff1b4d";
+	}
+});
