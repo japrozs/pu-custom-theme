@@ -351,3 +351,27 @@ document.querySelectorAll("li").forEach((li) => {
 		li.style.color = "#ff1b4d";
 	}
 });
+
+const sizeGuideBtn = document.getElementById("sizeGuideBtn");
+const sizeGuideOverlay = document.getElementById("sizeGuideOverlay");
+const sizeGuideClose = document.getElementById("sizeGuideClose");
+
+if (sizeGuideBtn && sizeGuideOverlay) {
+	sizeGuideBtn.addEventListener("click", (e) => {
+		e.preventDefault();
+		sizeGuideOverlay.classList.add("active");
+		document.body.style.overflow = "hidden";
+	});
+
+	sizeGuideClose.addEventListener("click", () => {
+		sizeGuideOverlay.classList.remove("active");
+		document.body.style.overflow = "";
+	});
+
+	sizeGuideOverlay.addEventListener("click", (e) => {
+		if (e.target === sizeGuideOverlay) {
+			sizeGuideOverlay.classList.remove("active");
+			document.body.style.overflow = "";
+		}
+	});
+}

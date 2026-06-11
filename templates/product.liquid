@@ -52,7 +52,21 @@
       </div>
     {% endif %}
 
-    <a href="/pages/size-guide" class="size-guide-link">SIZE GUIDE <i class="fa-solid fa-chevron-right"></i></a>
+    {% comment %} <a href="/pages/size-guide" class="size-guide-link">SIZE GUIDE <i class="fa-solid fa-chevron-right"></i></a> {% endcomment %}
+	 <a href="#" class="size-guide-link" id="sizeGuideBtn">SIZE GUIDE <i class="fa-solid fa-chevron-right"></i></a>
+
+<div class="modal-overlay" id="sizeGuideOverlay">
+    <div class="modal">
+        <div class="modal-header">
+            <span>SIZE GUIDE</span>
+            <button class="modal-close" id="sizeGuideClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="modal-body">
+            {{ product.metafields.custom.size_and_fit | metafield_tag }}
+        </div>
+    </div>
+</div>
+	 
 
     <div class="product-actions">
       {% form 'product', product %}
@@ -88,14 +102,14 @@
           {{ product.metafields.custom.care_instructions | metafield_tag }}
         </div>
       </div>
-      <div class="accordion">
+      {% comment %} <div class="accordion">
         <button class="accordion-header">
           SIZE AND FIT <i class="fa-solid fa-plus"></i>
         </button>
         <div class="accordion-body">
           {{ product.metafields.custom.size_and_fit | metafield_tag}}
         </div>
-      </div>
+      </div> {% endcomment %}
     </div>
 
     <div class="product-links">
