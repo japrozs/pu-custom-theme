@@ -159,6 +159,8 @@ body {
 	justify-content: center;
 	min-height: 100vh;
 	gap: 20px;
+	background: #000;
+	color: #fff;
 }
 
 .password-logo {
@@ -169,7 +171,7 @@ body {
 }
 
 .password-logo img {
-	max-height: 40px;
+	max-height: 70px;
 }
 
 .password-forms {
@@ -188,19 +190,21 @@ body {
 
 .password-input::placeholder {
 	opacity: 0.5;
+	color: #fff;
 }
 
 .password-input {
-	font-family: "Neue Haas Grotesk Display Pro", "Helvetica Neue", sans-serif;
+	font-family:
+		"Menlo", "Neue Haas Grotesk Display Pro", "Helvetica Neue", sans-serif;
 	font-size: 11px;
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
-	border: 1px solid #000;
+	border: 1px solid #434343;
 	outline: none;
 	padding: 10px 12px;
 	background: transparent;
-	color: #000;
+	color: #fff;
 }
 
 .password-submit {
@@ -209,11 +213,13 @@ body {
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
-	border: 1px solid #000;
+	border: 1px solid #761f32;
 	background: #000;
-	background-image: url("https://cdn.shopify.com/s/files/1/0968/9579/5505/files/button-bg.png?v=1778777607");
+	background-image: url("https://cdn.shopify.com/s/files/1/0968/9579/5505/files/button-bg-red.png?v=1778777696");
+	/* background-image: url("https://cdn.shopify.com/s/files/1/0968/9579/5505/files/button-bg.png?v=1778777607"); */
 	background-size: cover;
 	background-position: center;
+	background-blend-mode: screen;
 	padding: 10px 14px;
 	cursor: pointer;
 	color: #fff;
@@ -224,18 +230,7 @@ body {
 	content: "";
 	position: absolute;
 	inset: 0;
-	background: rgba(0, 0, 0, 0.2);
-}
-
-@media (max-width: 768px) {
-	.password-input {
-		color: #000;
-		background: #fff;
-	}
-
-	.password-submit {
-		color: #fff;
-	}
+	background: rgba(255, 255, 255, 0.05);
 }
 
 .password-divider {
@@ -1307,7 +1302,8 @@ body {
 }
 
 .newsletter-input {
-	font-family: "Neue Haas Grotesk Display Pro", "Helvetica Neue", sans-serif;
+	font-family:
+		"Menlo", "Neue Haas Grotesk Display Pro", "Helvetica Neue", sans-serif;
 	font-size: 12px;
 	font-weight: 600;
 	text-transform: uppercase;
@@ -1456,4 +1452,70 @@ body {
 
 .modal-body * {
 	max-width: 100%;
+}
+
+.lock-btn {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 44px;
+	height: 44px;
+	border: 1px solid #fff;
+	background: #000;
+	cursor: pointer;
+	font-size: 14px;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+}
+
+.lock-btn:hover {
+	background: #fff;
+	color: #000;
+}
+
+.modal-body .password-field {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.password-page ~ .modal-overlay .modal {
+	background: #000;
+	border: 1px solid #333;
+	color: #fff;
+}
+
+.password-page ~ .modal-overlay .modal-header {
+	background: #000;
+	border-bottom: 1px solid #333;
+}
+
+.password-page ~ .modal-overlay .modal-close {
+	color: #ff1b4d !important;
+	background: #000 !important;
+}
+
+.enter-pwd-link {
+	position: fixed;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: fit-content;
+	font-size: 11px;
+	font-family: "Menlo";
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	color: #555;
+	cursor: pointer;
+	z-index: 100;
+}
+.enter-pwd-link i {
+	margin-right: 6px;
+}
+
+.enter-pwd-link:hover {
+	color: #858585;
 }
