@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="theme-color" content="#ffffff">
+	<meta name="theme-color" content="#ff1b4d">
     <title>{{ shop.name }}</title>
     {{ content_for_header }}
     <link href="https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro" rel="stylesheet">
@@ -22,7 +22,7 @@
         </div>
         <nav class="menu">
 			<a href="{{ routes.root_url }}" class="sq-1 {% if template.name == 'index' %}active-link{% endif %}">ALL</a>
-			<a href="/pages/archive" class="sq-2 {% if page.handle == 'archive' %}active-link{% endif %}">ARCHIVE</a>
+			<a href="/pages/arxiv" class="sq-2 {% if page.handle == 'archive' %}active-link{% endif %}">ARXIVE</a>
 			<a href="/pages/manifesto" class="sq-3 {% if page.handle == 'manifesto' %}active-link{% endif %}">MANIFESTO</a>
 		</nav>
 		<nav class="menu">
@@ -61,7 +61,7 @@
         </div>
         <nav class="mobile-menu" id="mobileMenu">
 			<a href="{{ routes.root_url }}" class="sq-1">ALL</a>
-			<a href="/pages/archive" class="sq-2">ARCHIVE</a>
+			<a href="/pages/arxiv" class="sq-2">ARXIVE</a>
 			<a href="/pages/manifesto" class="sq-3">MANIFESTO</a>
 			<a href="/pages/newsletter" class="sq-4">JOIN THE UNION</a>
 			<a href="/pages/about" class="sq-5">ABOUT</a>
