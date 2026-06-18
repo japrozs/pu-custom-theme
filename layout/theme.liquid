@@ -57,7 +57,8 @@
             </div>
             <div class="search-results" id="searchResultsMobile"></div>
           </div>
-          <button class="cart-link cart-toggle">CART [{{ cart.item_count }}]</button>
+          {% comment %} <button class="cart-link cart-toggle">CART [{{ cart.item_count }}]</button> {% endcomment %}
+		   <button class="cart-link cart-toggle">CART [<span class="cart-count">{{ cart.item_count }}</span>]</button>
         </div>
         <nav class="mobile-menu" id="mobileMenu">
 			<a href="{{ routes.root_url }}" class="sq-1">ALL</a>
@@ -87,9 +88,12 @@
 
       <div class="cart-drawer-items" id="cartItems">
         {% if cart.item_count == 0 %}
-          <p class="cart-empty">"YOUR BAG IS EMPTY"</p>
-          <p class="cart-empty alt-lang">ਤੁਹਾਡਾ ਬੈਗ ਖਾਲੀ ਹੈ।</p>
-          <p class="cart-empty alt-lang">حقيبتك فارغة</p>
+          <div class="cart-empty-images">
+			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/cart-one.png?v=1781759168" alt="" />
+			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/cart-two.png?v=1781759168" alt="" />
+			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/cart-three.png?v=1781759168" alt="" />
+			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/cart-four.png?v=1781759168" alt="" />
+		</div>
         {% else %}
           {% for item in cart.items %}
             <div class="cart-item" data-key="{{ item.key }}">
@@ -108,7 +112,8 @@
                   <button class="qty-btn" data-key="{{ item.key }}" data-qty="{{ item.quantity | plus: 1 }}">+</button>
                 </div>
               </div>
-              <button class="cart-item-remove" data-key="{{ item.key }}"><i class="fa-solid fa-xmark"></i></button>
+              <button class="cart-item-remove" data-key="{{ item.key }}">[REMOVE]</button>
+              {% comment %} <button class="cart-item-remove" data-key="{{ item.key }}"><i class="fa-solid fa-xmark"></i></button> {% endcomment %}
             </div>
           {% endfor %}
         {% endif %}

@@ -8,6 +8,7 @@
       </div>
       <div class="search-results" id="searchResults"></div>
     </div>
-	<button class="cart-link cart-toggle">CART [{{ cart.item_count }}]</button>
+	{% comment %} <button class="cart-link cart-toggle">CART [{{ cart.item_count }}]</button> {% endcomment %}
+	 <button class="cart-link cart-toggle">CART [<span class="cart-count">{{ cart.item_count }}</span>]</button>
   </div>
 </div>
