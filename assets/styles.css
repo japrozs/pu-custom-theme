@@ -1063,6 +1063,7 @@ body {
 	align-items: center;
 	border: 1px solid #e2e2e2;
 	max-width: max-content;
+	font-family: "Menlo";
 	padding: 2px 7px;
 	gap: 12px;
 	margin-top: 4px;
@@ -1458,9 +1459,34 @@ body {
 .newsletter-error {
 	font-size: 14px;
 	margin-top: 10px;
+	font-family: "Menlo";
+	font-weight: bold;
 	text-transform: uppercase;
 	letter-spacing: 0.3px;
-	color: #ff1b4d;
+	color: var(--primary-red);
+}
+
+.newsletter-success {
+	font-size: 14px;
+	margin-top: 10px;
+	font-family: "Menlo";
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0.3px;
+	color: black;
+	background-color: #cfff04;
+	max-width: max-content;
+}
+.newsletter-error {
+	font-size: 14px;
+	margin-top: 10px;
+	font-family: "Menlo";
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0.3px;
+	color: #cfff04;
+	background-color: black;
+	max-width: max-content;
 }
 
 @media (max-width: 500px) {
@@ -1644,4 +1670,10 @@ body {
 	width: 100%;
 	height: auto;
 	display: block;
+}
+
+.errors * {
+	font-family: "Menlo" !important;
+	color: var(--primary-red) !important;
+	font-weight: bold !important;
 }

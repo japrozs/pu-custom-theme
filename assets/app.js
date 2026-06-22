@@ -70,6 +70,8 @@ document.querySelectorAll(".accordion-header").forEach((btn) => {
 // Variant selector
 document.querySelectorAll(".size-btn, .color-swatch").forEach((btn) => {
 	btn.addEventListener("click", () => {
+		if (btn.classList.contains("unavailable")) return;
+
 		document.getElementById("variantId").value = btn.dataset.variantId;
 		window.history.replaceState({}, "", btn.dataset.variantUrl);
 		document

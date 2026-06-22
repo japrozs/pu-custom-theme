@@ -17,7 +17,7 @@
 			<p class="newsletter-consent">i understand that i can opt out at any time</p>
 			<button type="submit" class="newsletter-submit">JOIN THE UNION</button>
 			{% if form.posted_successfully? %}
-				<p class="newsletter-error">SUCCESSFULLY JOINED THE UNION</p>
+				<p class="newsletter-success">[+] SUCCESSFULLY JOINED THE UNION [+]</p>
 			{% endif %}
 			{% if form.errors %}
 				<p class="newsletter-error">{{ form.errors | default_errors }}</p>
