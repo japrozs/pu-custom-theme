@@ -1,10 +1,9 @@
 {% assign collection = collections.all %}
-
+{% assign products = collection.products | sort: 'published_at' | reverse %}
 {% render 'banner' %}
 {% render 'topbar', title: 'ALL PRODUCTS' %}
-
 <div class="products">
-  {% for product in collection.products %}
+  {% for product in products %}
     <div class="card">
       <a href="{{ product.url }}">
         <div class="image-box">

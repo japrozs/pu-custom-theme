@@ -2,6 +2,7 @@
 
 :root {
 	--primary-red: #ff1b4d;
+	--primary-neon: #cfff04;
 }
 
 html {
@@ -155,6 +156,8 @@ body {
 .status {
 	font-size: 13px;
 	text-transform: uppercase;
+	font-family: "Menlo";
+	white-space: nowrap;
 	color: #ff1b4d;
 }
 
@@ -492,7 +495,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	color: #bdbdbd;
-	z-index: 10;
+	/* z-index: 10; */
 	transition: color 0.08s ease-in-out;
 }
 
@@ -560,6 +563,9 @@ body {
 	font-size: 35px;
 	font-weight: 600;
 	text-transform: lowercase;
+	/* font-family: "Menlo"; */
+	background: var(--primary-neon);
+	max-width: max-content;
 	letter-spacing: 0.3px;
 }
 
@@ -667,7 +673,7 @@ body {
 	position: relative;
 }
 
-.btn-add-to-cart:hover::after {
+.btn-add-to-cart:hover::after :not(.unavailable) {
 	content: "";
 	position: absolute;
 	inset: 0;
@@ -675,7 +681,7 @@ body {
 }
 
 .btn-add-to-cart.unavailable {
-	background: #ccc;
+	opacity: 0.6;
 	cursor: not-allowed;
 }
 
@@ -802,11 +808,15 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 12px 16px;
+	padding: 8px 16px;
 }
 
 .mobile-logo img {
-	max-height: 36px;
+	max-height: 40px;
+}
+
+.mobile-logo {
+	margin: 0 auto;
 }
 
 .hamburger {
@@ -893,6 +903,10 @@ body {
 
 	.products {
 		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.product-title {
+		font-size: 30px;
 	}
 
 	.product-page {
