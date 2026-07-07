@@ -4,7 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="theme-color" content="#ff1b4d">
-    <title>{{ shop.name }}</title>
+    {% comment %} <title>{{ shop.name }}</title> {% endcomment %}
+	 <title>
+    {% if template.name == 'index' %}
+        {{ shop.name }}
+	{% elsif template.name == 'product' %}
+        {{ product.title | downcase}} — {{ shop.name }}
+    {% else %}
+        {{ page_title }} — {{ shop.name }}
+    {% endif %}
+</title>
     {{ content_for_header }}
     <link href="https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -12,32 +21,7 @@
   </head>
   <body>
     <div class="page">
-
-      <!-- DESKTOP SIDEBAR -->
-      <aside class="sidebar">
-        <div class="logo">
-          <a href="/">
-            <img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/logo-text.png?v=1778470618" alt="{{ shop.name }}" />
-          </a>
-        </div>
-        <nav class="menu">
-			<a href="{{ routes.root_url }}" class="sq-1 {% if template.name == 'index' %}active-link{% endif %}">ALL</a>
-			<a href="/pages/arxiv" class="sq-2 {% if page.handle == 'archive' %}active-link{% endif %}">ARXIVE</a>
-			<a href="/pages/manifesto" class="sq-3 {% if page.handle == 'manifesto' %}active-link{% endif %}">MANIFESTO</a>
-		</nav>
-		<nav class="menu">
-			<a href="/pages/newsletter" class="sq-4 {% if page.handle == 'newsletter' %}active-link{% endif %}">JOIN THE UNION</a>
-			<a href="/pages/about" class="sq-5 {% if page.handle == 'about' %}active-link{% endif %}">ABOUT</a>
-			<a href="https://www.instagram.com/primaryunion" target="_blank" class="sq-6">INSTAGRAM</a>
-			<a href="/pages/terms-of-service" class="sq-7 {% if page.handle == 'terms-of-service' %}active-link{% endif %}">TERMS OF SERVICE</a>
-			<a href="/pages/shipping-policy" class="sq-8 {% if page.handle == 'shipping-policy' %}active-link{% endif %}">SHIPPING POLICY</a>
-		</nav>
-        <div class="bottom">
-          <img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/bootpu.png?v=1778470582" alt="" />
-        </div>
-      </aside>
-
-      <!-- MOBILE NAVBAR -->
+		<!-- MOBILE NAVBAR -->
       <header class="mobile-nav">
         <div class="mobile-nav-top">
           <div class="mobile-logo">
@@ -72,10 +56,33 @@
 		</nav>
       </header>
 
-      <main class="main">
+		<main class="main">
         {{ content_for_layout }}
       </main>
-
+      <!-- DESKTOP SIDEBAR -->
+      <aside class="sidebar">
+        <div class="logo">
+          <a href="/">
+            <img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/logo-text.png?v=1778470618" alt="{{ shop.name }}" />
+          </a>
+        </div>
+        <nav class="menu">
+			<a href="{{ routes.root_url }}" class="sq-1 {% if template.name == 'index' %}active-link{% endif %}">ALL</a>
+			<a href="/pages/arxiv" class="sq-2 {% if page.handle == 'archive' %}active-link{% endif %}">ARXIVE</a>
+			<a href="/pages/manifesto" class="sq-3 {% if page.handle == 'manifesto' %}active-link{% endif %}">MANIFESTO</a>
+		</nav>
+		<nav class="menu">
+			<a href="/pages/newsletter" class="sq-4 {% if page.handle == 'newsletter' %}active-link{% endif %}">JOIN THE UNION</a>
+			<a href="/pages/about" class="sq-5 {% if page.handle == 'about' %}active-link{% endif %}">ABOUT</a>
+			<a href="https://www.instagram.com/primaryunion" target="_blank" class="sq-6">INSTAGRAM</a>
+			<a href="/pages/terms-of-service" class="sq-7 {% if page.handle == 'terms-of-service' %}active-link{% endif %}">TERMS OF SERVICE</a>
+			<a href="/pages/shipping-policy" class="sq-8 {% if page.handle == 'shipping-policy' %}active-link{% endif %}">SHIPPING POLICY</a>
+		</nav>
+        <div class="bottom">
+          {% comment %} <img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/bootpu.png?v=1778470582" alt="" /> {% endcomment %}
+          <img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/bootpu-black.png?v=1783268173" alt="" />
+        </div>
+      </aside>
     </div>
 
     <div class="cart-overlay" id="cartOverlay"></div>

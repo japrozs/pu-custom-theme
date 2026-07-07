@@ -40,7 +40,8 @@
   </div> {% endcomment %}
 
   <div class="product-info">
-    <h1 class="product-title">[{{ product.title }}]</h1>
+    {% comment %} <h1 class="product-title">[{{ product.title }}]</h1> {% endcomment %}
+	<h1 class="product-title"><span class="product-title-highlight">[{{ product.title }}]</span></h1>
     <div class="product-price">{{ product.price | money_without_currency }} USD</div>
 
     {% assign current_variant = product.selected_or_first_available_variant %}
@@ -98,7 +99,7 @@
       {% form 'product', product %}
         <input type="hidden" name="id" id="variantId" value="{{ current_variant.id }}" />
         {% if current_variant.available %}
-          <button type="submit" class="btn-add-to-cart">ADD TO BAG</button>
+          <button type="submit" class="btn-add-to-cart">ADD TO CART</button>
         {% else %}
           <button type="button" class="btn-add-to-cart unavailable" disabled>SOLD OUT</button>
         {% endif %}
