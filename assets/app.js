@@ -424,3 +424,33 @@ if (carouselPrev && carouselNext) {
 		setActiveImage(newIndex);
 	});
 }
+
+async function updateSidebarInfo() {
+	// Time
+	const now = new Date();
+	const time = now.toLocaleTimeString("en-US", {
+		timeZone: "America/New_York",
+		hour: "2-digit",
+		minute: "2-digit",
+		hour12: false,
+	});
+	const timeEl = document.getElementById("sidebarTime");
+	if (timeEl) timeEl.textContent = time;
+
+	// Temperature — Atlanta coordinates
+	try {
+		const res = await fetch(
+			"https://api.open-meteo.com/v1/forecast?latitude=33.749&longitude=-84.388&current=temperature_2m&temperature_unit=fahrenheit&timezone=America%2FNew_York",
+		);
+		const data = await res.json();
+		const temp = Math.round(data.current.temperature_2m);
+		const tempEl = document.getElementById("sidebarTemp");
+		if (tempEl) tempEl.textContent = temp + "°F";
+	} catch {
+		const tempEl = document.getElementById("sidebarTemp");
+		if (tempEl) tempEl.textContent = "--°F";
+	}
+}
+
+updateSidebarInfo();
+setInterval(updateSidebarInfo, 60000);

@@ -353,7 +353,8 @@ body {
 }
 
 .search-input {
-	font-family: "Neue Haas Grotesk Display Pro", "Helvetica Neue", sans-serif;
+	font-family:
+		"Menlo", "Neue Haas Grotesk Display Pro", "Helvetica Neue", sans-serif;
 	font-size: 12px;
 	font-weight: 600;
 	text-transform: uppercase;
@@ -571,8 +572,8 @@ body {
 	gap: 18px;
 	padding-top: 10px;
 	padding-left: 3px;
-	position: sticky;
-	top: 20px;
+	/* position: sticky; */
+	/* top: 20px; */
 	align-self: flex-start;
 	max-height: calc(100dvh - 40px);
 	overflow-y: auto;
@@ -615,9 +616,9 @@ body {
 	/* background: var(--primary-neon); */
 	/* border: 1px dashed var(--primary-neon); */
 	/* border-radius: 2px; */
-	color: var(--primary-neon);
+	/* color: var(--primary-red); */
 	/* color: #000; */
-	/* color: #fff; */
+	color: #fff;
 	-webkit-box-decoration-break: clone;
 	box-decoration-break: clone;
 	padding: 0 4px;
@@ -1770,4 +1771,13 @@ body {
 	font-family: "Menlo" !important;
 	color: var(--primary-red) !important;
 	font-weight: bold !important;
+}
+
+.sidebar-info {
+	font-family: "Menlo";
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #555;
+	margin-bottom: 16px;
+	letter-spacing: 0.3px;
 }
