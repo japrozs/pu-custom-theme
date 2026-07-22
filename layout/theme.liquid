@@ -64,7 +64,7 @@
       <aside class="sidebar">
         <div class="logo">
           <a href="/">
-            <img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/logo-text.png?v=1778470618" alt="{{ shop.name }}" />
+            <img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/header-logo-white.png?v=1784701125" alt="{{ shop.name }}" />
           </a>
         </div>
         <nav class="menu">
@@ -115,10 +115,9 @@
                 <img src="{{ item.image | img_url: 'small' }}" alt="{{ item.title }}" />
               </div>
               <div class="cart-item-info">
-                <div class="cart-item-name">{{ item.product.title }}</div>
-                {% unless item.variant.title == 'Default Title' %}
-                  <div class="cart-item-variant">{{ item.variant.title }}</div>
-                {% endunless %}
+                <div class="cart-item-name">{{ item.product.title }}{% unless item.variant.title == 'Default Title' %}
+                  <span class="cart-item-variant">[{{ item.variant.title }}]</span>
+                {% endunless %}</div>
                 <div class="cart-item-price">{{ item.price | money_without_currency }} USD</div>
                 <div class="cart-item-qty">
                   <button class="qty-btn" data-key="{{ item.key }}" data-qty="{{ item.quantity | minus: 1 }}">−</button>

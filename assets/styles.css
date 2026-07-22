@@ -294,7 +294,7 @@ body {
 .logo img {
 	max-height: 53px;
 	margin-bottom: 35px;
-	filter: invert(1);
+	/* filter: invert(1); */
 }
 
 .menu {
@@ -605,10 +605,10 @@ body {
 .product-title {
 	font-size: 30px;
 	font-weight: 600;
-	font-family: "JetBrains Mono";
+	font-family: "Menlo";
 	font-optical-sizing: auto;
 	font-style: normal;
-	text-transform: lowercase;
+	/* text-transform: lowercase; */
 	letter-spacing: 0.3px;
 }
 
@@ -663,39 +663,72 @@ body {
 .size-grid {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 6px;
+	/* gap: 6px; */
 }
 
 .size-btn {
-	min-width: 52px;
-	height: 36px;
+	/* min-width: 52px; */
+	height: 45px;
+	width: 45px;
+	aspect-ratio: 1 / 1;
 	border: 1px solid #444;
+	/* border: 1px solid color-mix(in srgb, var(--primary-red) 30%, transparent); */
 	background: transparent;
 	font-family:
 		"Menlo", "Neue Haas Grotesk Display Pro", "Helvetica Neue", sans-serif;
-	font-size: 12px;
+	font-size: 13px;
 	font-weight: 600;
 	text-transform: uppercase;
 	cursor: pointer;
 	padding: 0 10px;
-	color: #fff;
+	color: #aaa;
+	/* color: color-mix(in srgb, var(--primary-red) 50%, transparent); */
+	/* color: var(--primary-red); */
 	-webkit-appearance: none;
 }
 
-.size-btn:hover {
-	border-color: #666;
+.size-btn:hover:not(.size-btn.unavailable, .size-btn.active) {
+	border-color: color-mix(in srgb, var(--primary-red) 60%, transparent);
 }
 
 .size-btn.active {
-	border: 1px solid var(--primary-neon);
-	background: #000;
-	color: var(--primary-neon);
+	border: 1px solid var(--primary-red);
+	background: color-mix(in srgb, var(--primary-red) 10%, transparent);
+	color: var(--primary-red);
 }
 
-.size-btn.unavailable {
+/* .size-btn.unavailable {
 	opacity: 0.3;
 	cursor: not-allowed;
 	text-decoration: line-through;
+} */
+
+.size-btn.unavailable {
+	position: relative;
+	/* opacity: 0.45; */
+	cursor: not-allowed;
+	/* border-color: #666; */
+	/* color: #aaa; */
+	overflow: hidden;
+	color: #444;
+	/* background: color-mix(in srgb, var(--primary-red) 10%, transparent); */
+	/* background: color-mix(in srgb, #000 10%, transparent); */
+	background: #000;
+	/* border: 1px solid color-mix(in srgb, var(--primary-red) 30%, transparent); */
+	border: 1px solid #444;
+}
+
+.size-btn.unavailable::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: -15%;
+	width: 130%;
+	height: 1.5px;
+	background: color-mix(in srgb, var(--primary-red) 30%, transparent);
+	transform: rotate(-45deg);
+	transform-origin: center;
+	pointer-events: none;
 }
 
 .size-guide-link {
@@ -715,12 +748,15 @@ body {
 .btn-add-to-cart {
 	width: 100%;
 	padding: 16px;
-	background: #fff;
-	background-image: url("https://cdn.shopify.com/s/files/1/0968/9579/5505/files/button-bg.png?v=1778777607");
+	background: #000;
+	/* background-image: url("https://cdn.shopify.com/s/files/1/0968/9579/5505/files/button-bg.png?v=1778777607"); */
+	background-image: url("https://cdn.shopify.com/s/files/1/0968/9579/5505/files/button-bg-red.png?v=1778777696");
 	background-size: cover;
 	background-position: center;
-	color: var(--primary-neon);
-	border: 1px dashed #434343;
+	color: white;
+	/* color: var(--primary-neon); */
+	/* border: 1px dashed #434343; */
+	border: 1px dashed color-mix(in srgb, var(--primary-red) 50%, transparent);
 	font-family:
 		"Menlo", "Neue Haas Grotesk Display Pro", "Helvetica Neue", sans-serif;
 	font-size: 13px;
@@ -735,7 +771,7 @@ body {
 	content: "";
 	position: absolute;
 	inset: 0;
-	background: rgba(255, 255, 255, 0.05);
+	background: rgba(0, 0, 0, 0.1);
 }
 
 .btn-add-to-cart.unavailable {
@@ -1124,7 +1160,7 @@ body {
 	width: 80px;
 	height: 80px;
 	flex-shrink: 0;
-	background: #222;
+	/* background: #222; */
 }
 
 .cart-item-image img {
@@ -1145,21 +1181,24 @@ body {
 	font-size: 11px;
 	font-weight: 600;
 	text-transform: uppercase;
+	font-family: "Menlo";
 	letter-spacing: 0.3px;
 	color: #fff;
 }
 
 .cart-item-variant {
-	font-size: 11px;
+	font-size: 13px;
 	text-transform: uppercase;
 	font-family: "Menlo";
 	color: #666;
 }
 
 .cart-item-price {
-	font-size: 11px;
+	font-size: 12px;
 	font-weight: 600;
-	color: #fff;
+	font-family: "Menlo";
+	color: #666;
+	margin-top: 4px;
 }
 
 .cart-item-qty {
@@ -1168,10 +1207,10 @@ body {
 	border: 1px solid #333;
 	max-width: max-content;
 	font-family: "Menlo";
-	padding: 2px 7px;
+	padding: 3px 7px;
 	gap: 12px;
 	margin-top: 4px;
-	font-size: 11px;
+	font-size: 12px;
 	color: #fff;
 }
 
@@ -1179,7 +1218,7 @@ body {
 	background: none;
 	border: none;
 	cursor: pointer;
-	font-size: 14px;
+	font-size: 15px;
 	color: #fff;
 	padding: 0;
 	line-height: 1;
@@ -1780,4 +1819,9 @@ body {
 	color: #555;
 	margin-bottom: 16px;
 	letter-spacing: 0.3px;
+}
+
+.product-title-color {
+	/* color: var(--primary-red); */
+	color: #333;
 }

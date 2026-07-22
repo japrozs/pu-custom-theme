@@ -264,7 +264,7 @@ document.querySelectorAll(".btn-add-to-cart").forEach((btn) => {
 	btn.addEventListener("click", () => {
 		setTimeout(() => {
 			updateCart();
-			// openCart();
+			openCart();
 		}, 500);
 	});
 });
@@ -287,7 +287,7 @@ if (productForm) {
 			})
 			.then(() => {
 				updateCart();
-				// openCart();
+				openCart();
 			})
 			.catch((err) => console.error("Error adding to cart:", err));
 	});
@@ -454,3 +454,13 @@ async function updateSidebarInfo() {
 
 updateSidebarInfo();
 setInterval(updateSidebarInfo, 60000);
+
+document.addEventListener("DOMContentLoaded", () => {
+	const titleHighlight = document.querySelector(".product-title-highlight");
+	if (!titleHighlight) return;
+
+	titleHighlight.innerHTML = titleHighlight.innerHTML.replace(
+		/(\[[A-Z\s]+\])(?=\])/,
+		(match) => `<span class="product-title-color">${match}</span>`,
+	);
+});
