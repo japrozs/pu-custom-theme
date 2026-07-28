@@ -6,11 +6,27 @@
   {% for product in products %}
     <div class="card">
       <a href="{{ product.url }}">
-        <div class="image-box">
+        {% comment %} <div class="image-box">
           {% if product.featured_image %}
             <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}" />
           {% endif %}
-        </div>
+        </div> {% endcomment %}
+		<div class="image-box">
+			{% if product.featured_image %}
+				<img 
+					class="product-img-primary"
+					src="{{ product.featured_image | img_url: 'large' }}" 
+					alt="{{ product.featured_image.alt | escape }}" 
+				/>
+			{% endif %}
+			{% if product.images[1] %}
+				<img 
+					class="product-img-secondary"
+					src="{{ product.images[1] | img_url: 'large' }}" 
+					alt="{{ product.images[1].alt | escape }}" 
+				/>
+			{% endif %}
+		</div>
         <div class="product-name">
           {{ product.title }}
           {% unless product.available %}

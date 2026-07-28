@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="theme-color" content="#ff1b4d">
+	{% comment %} <meta name="theme-color" content="#ff1b4d"> {% endcomment %}
 	<link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/favicon-512x512.png?v=1783639988" />
     {% comment %} <title>{{ shop.name }}</title> {% endcomment %}
 	 <title>
@@ -103,10 +103,18 @@
       <div class="cart-drawer-items" id="cartItems">
         {% if cart.item_count == 0 %}
           <div class="cart-empty-images">
-			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/cart-one.png?v=1781759168" alt="" />
+			{% comment %} <img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/cart-one.png?v=1781759168" alt="" />
 			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/cart-two.png?v=1781759168" alt="" />
 			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/cart-three.png?v=1781759168" alt="" />
-			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/cart-four.png?v=1781759168" alt="" />
+			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/cart-four.png?v=1781759168" alt="" /> {% endcomment %}
+			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/qwe.png?v=1785088815" alt="" />
+			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/wer.png?v=1785088814" alt="" />
+			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/ert.png?v=1785088815" alt="" />
+			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/rty.png?v=1785088817" alt="" />
+			{% comment %} <img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/ASD.png?v=1785089720" alt="" />
+			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/SFD.png?v=1785089721" alt="" />
+			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/DFG.png?v=1785089720" alt="" />
+			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/FGH.png?v=1785089720" alt="" /> {% endcomment %}
 		</div>
         {% else %}
           {% for item in cart.items %}

@@ -194,10 +194,10 @@ function updateCart() {
 
 			if (cart.item_count === 0) {
 				itemsEl.innerHTML = `<div class="cart-empty-images">
-			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/cart-one.png?v=1781759168" alt="" />
-			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/cart-two.png?v=1781759168" alt="" />
-			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/cart-three.png?v=1781759168" alt="" />
-			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/cart-four.png?v=1781759168" alt="" />
+			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/qwe.png?v=1785088815" alt="" />
+			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/wer.png?v=1785088814" alt="" />
+			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/ert.png?v=1785088815" alt="" />
+			<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/rty.png?v=1785088817" alt="" />
 		</div`;
 				return;
 			}
@@ -210,12 +210,7 @@ function updateCart() {
             <img src="${item.image}" alt="${item.title}" />
           </div>
           <div class="cart-item-info">
-            <div class="cart-item-name">${item.product_title}</div>
-            ${
-				item.variant_title && item.variant_title !== "Default Title"
-					? `<div class="cart-item-variant">${item.variant_title}</div>`
-					: ""
-			}
+            <div class="cart-item-name">${item.product_title}${item.variant_title && item.variant_title !== "Default Title" ? `\t<span class="cart-item-variant">[${item.variant_title}]</span>` : ""}</div>
             <div class="cart-item-price">${(item.price / 100).toFixed(0)} USD</div>
             <div class="cart-item-qty">
               <button class="qty-btn" data-key="${item.key}" data-qty="${item.quantity - 1}">−</button>
@@ -285,10 +280,16 @@ if (productForm) {
 				if (!res.ok) throw new Error("Failed to add to cart");
 				return res.json();
 			})
+			.then(() => updateCart())
 			.then(() => {
-				updateCart();
-				openCart();
+				requestAnimationFrame(() => {
+					openCart();
+				});
 			})
+			// .then(() => {
+			// 	updateCart();
+			// 	openCart();
+			// })
 			.catch((err) => console.error("Error adding to cart:", err));
 	});
 }
