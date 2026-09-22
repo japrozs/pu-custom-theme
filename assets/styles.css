@@ -951,7 +951,7 @@ body {
 .mobile-nav {
 	display: none;
 	flex-direction: column;
-	position: sticky;
+	position: static;
 	top: 0;
 	background: #000;
 	z-index: 999;
