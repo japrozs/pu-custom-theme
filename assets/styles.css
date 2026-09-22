@@ -1,5 +1,6 @@
 @import url("https://fonts.cdnfonts.com/css/menlo");
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+@import url("https://rsms.me/inter/inter.css");
 
 :root {
 	--primary-red: #ff1b4d;
@@ -25,8 +26,49 @@ html:has(body.password-body) {
 	-ms-overflow-style: none;
 }
 
+/* univers font imports */
+
+@font-face {
+	font-family: "Univers";
+	font-weight: normal;
+	src: url("https://cdn.shopify.com/s/files/1/0968/9579/5505/files/univers-regular.ttf?v=1790064005");
+}
+
+@font-face {
+	font-family: "Univers-next";
+	font-weight: 450;
+	src: url("https://cdn.shopify.com/s/files/1/0968/9579/5505/files/univers-next-regular.woff2?v=1790064005");
+}
+
+@font-face {
+	font-family: "Univers";
+	font-weight: bold;
+	src: url("https://cdn.shopify.com/s/files/1/0968/9579/5505/files/univers-bold.ttf?v=1790064005");
+}
+
+@font-face {
+	font-family: "Univers";
+	font-stretch: condensed;
+	font-weight: bold;
+	src: url("https://cdn.shopify.com/s/files/1/0968/9579/5505/files/univers-cn-bold.ttf?v=1790064005");
+}
+
+@font-face {
+	font-family: "Univers";
+	font-stretch: condensed;
+	src: url("https://cdn.shopify.com/s/files/1/0968/9579/5505/files/univers-cn-rg.ttf?v=1790064005");
+}
+
+@font-face {
+	font-family: "Univers";
+	font-weight: lighter;
+	src: url("https://cdn.shopify.com/s/files/1/0968/9579/5505/files/univers-light.ttf?v=1790064005");
+}
+
+/* univers font imports */
+
 body {
-	max-width: 1300px;
+	max-width: 1200px;
 	margin: 0 auto;
 }
 
@@ -35,6 +77,16 @@ body {
 }
 
 ::selection {
+	background-color: oklch(68.5% 0.169 237.323 / 30%);
+	color: inherit;
+}
+
+::-moz-selection {
+	background-color: oklch(68.5% 0.169 237.323 / 30%);
+	color: inherit;
+}
+
+/* ::selection {
 	background: #cfff04;
 	color: black;
 	text-shadow: none;
@@ -44,7 +96,7 @@ body {
 	background: #cfff04;
 	color: black;
 	text-shadow: none;
-}
+} */
 
 body,
 img,
@@ -75,8 +127,14 @@ a,
 }
 
 body {
-	font-family: "Neue Haas Grotesk Display Pro", "Helvetica Neue", sans-serif;
+	font-family: "Neue Haas Grotesk Display Pro";
+	/* font-family: "Inter"; */
 	font-weight: 600;
+	/* font-family: "Univers-next";
+	font-weight: 500; */
+	font-stretch: 95%;
+	font-size: 1rem;
+	text-rendering: optimizeLegibility;
 	color: #fff;
 	background: #000;
 }
@@ -90,7 +148,7 @@ body {
 .page {
 	display: flex;
 	min-height: 100dvh;
-	max-width: 1440px;
+	max-width: 1240px;
 	margin: 0 auto;
 }
 
@@ -605,11 +663,12 @@ body {
 .product-title {
 	font-size: 30px;
 	font-weight: 600;
-	font-family: "Menlo";
+	/* font-family: "Menlo"; */
+	font-family: "Courier New";
 	font-optical-sizing: auto;
 	font-style: normal;
 	/* text-transform: lowercase; */
-	letter-spacing: 0.3px;
+	/* letter-spacing: 0.3px; */
 }
 
 .product-title-highlight {
