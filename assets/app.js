@@ -464,4 +464,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		/(\[[A-Z\s]+\])(?=\])/,
 		(match) => `<span class="product-title-color">${match}</span>`,
 	);
+
+	titleHighlight.innerHTML = titleHighlight.innerHTML
+		.normalize("NFD")
+		.replace(
+			/([A-Za-z])(\p{M}+)/gu,
+			(match) => `<span class="diacritic-match">${match}</span>`,
+		);
 });

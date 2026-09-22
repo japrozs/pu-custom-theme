@@ -1915,3 +1915,7 @@ body {
 		opacity: 1;
 	}
 }
+
+.diacritic-match {
+	color: var(--primary-neon);
+}
