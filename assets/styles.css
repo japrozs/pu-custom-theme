@@ -1833,12 +1833,13 @@ body {
 
 .archive-grid {
 	columns: 3;
-	column-gap: 4px;
+	column-gap: 10px;
 }
 
 .archive-item {
 	break-inside: avoid;
 	margin-bottom: 4px;
+	border: 1px solid #111;
 }
 
 .archive-item img {
@@ -1963,4 +1964,8 @@ body {
 
 .cart-icon {
 	font-size: 20px;
+}
+
+.box-shadow {
+	box-shadow: 2px 2px #111;
 }
