@@ -147,8 +147,8 @@ body {
 
 .page {
 	display: flex;
-	/* min-height: 100dvh; */
-	max-width: 1200px;
+	min-height: 100dvh;
+	max-width: 1240px;
 	margin: 0 auto;
 }
 
@@ -163,7 +163,7 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 15px;
-	/* margin-top: 30px; */
+	margin-top: 30px;
 }
 
 .title {
@@ -341,12 +341,12 @@ body {
 	width: 240px;
 	padding: 15px 15px;
 	padding-left: 20px;
-	text-align: left;
+	text-align: right;
 	display: flex;
 	flex-direction: column;
-	height: calc(100dvh - 93px);
+	height: 100dvh;
 	position: sticky;
-	top: 93px;
+	top: 0;
 }
 
 .logo img {
@@ -1833,13 +1833,12 @@ body {
 
 .archive-grid {
 	columns: 3;
-	column-gap: 10px;
+	column-gap: 4px;
 }
 
 .archive-item {
 	break-inside: avoid;
 	margin-bottom: 4px;
-	border: 1px solid #111;
 }
 
 .archive-item img {
@@ -1919,53 +1918,4 @@ body {
 
 .diacritic-match {
 	color: var(--primary-neon);
-}
-
-.testing-top-banner {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 93px; /* 20px + 20px padding + 53px logo */
-	padding: 0;
-}
-
-.testing-top-banner img {
-	max-height: 53px;
-}
-
-@media (max-width: 768px) {
-	.testing-top-banner {
-		display: none;
-	}
-}
-
-.sidebar-cart-btn,
-.sidebar-item-styling {
-	background: none;
-	border: none;
-	cursor: pointer;
-	font-family: "Neue Haas Grotesk Display Pro", "Helvetica Neue", sans-serif;
-	font-size: 12px;
-	font-weight: 600;
-	text-transform: uppercase;
-	letter-spacing: 0.3px;
-	color: #fff;
-	padding: 0;
-	text-align: left;
-}
-
-.sidebar-cart-btn:hover,
-.sidebar-item-styling:hover {
-	text-decoration: underline;
-	text-decoration-style: dotted;
-	text-decoration-color: #555;
-	text-decoration-thickness: 2px;
-}
-
-.cart-icon {
-	font-size: 20px;
-}
-
-.box-shadow {
-	box-shadow: 2px 2px #111;
 }

@@ -1,7 +1,7 @@
 {% assign collection = collections.all %}
 {% assign products = collection.products | sort: 'published_at' | reverse %}
-{% comment %} {% render 'banner' %}
-{% render 'topbar', title: 'ALL PRODUCTS' %} {% endcomment %}
+{% render 'banner' %}
+{% render 'topbar', title: 'ALL PRODUCTS' %}
 <div class="products">
   {% for product in products %}
     <div class="card">
@@ -38,4 +38,4 @@
     </div>
   {% endfor %}
 </div>
-{% comment %} {% render 'bottom-banner' %} {% endcomment %}
+{% render 'bottom-banner' %}
