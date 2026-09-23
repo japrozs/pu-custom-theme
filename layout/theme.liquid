@@ -21,10 +21,19 @@
     {{ 'styles.css' | asset_url | stylesheet_tag }}
   </head>
   <body>
+	  <div class="testing-top-banner">
+		<a href="/">
+		<img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/header-logo-white.png?v=1784701125" alt="{{ shop.name }}" />
+				</a>
+		</div>
     <div class="page">
 		<!-- MOBILE NAVBAR -->
       <header class="mobile-nav">
         <div class="mobile-nav-top">
+			<button class="cart-link cart-toggle">
+				{% comment %} CART [<span class="cart-count">{{ cart.item_count }}</span>] {% endcomment %}
+				 <i class="fa-solid fa-bag-shopping cart-icon"></i>
+			</button>
           <div class="mobile-logo">
             <a href="/">
               <img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/logo-text.png?v=1778470618" alt="{{ shop.name }}" />
@@ -34,7 +43,7 @@
             <i class="fa-solid fa-bars"></i>
           </button>
         </div>
-        <div class="mobile-nav-bottom">
+        {% comment %} <div class="mobile-nav-bottom">
           <div class="search-wrapper">
             <div class="search-bar">
               <input type="text" placeholder="SEARCH PRODUCTS" class="search-input" id="searchInputMobile" />
@@ -44,7 +53,7 @@
           </div>
           {% comment %} <button class="cart-link cart-toggle">CART [{{ cart.item_count }}]</button> {% endcomment %}
 		   <button class="cart-link cart-toggle">CART [<span class="cart-count">{{ cart.item_count }}</span>]</button>
-        </div>
+        </div> {% endcomment %}
         <nav class="mobile-menu" id="mobileMenu">
 			<a href="{{ routes.root_url }}" class="sq-1">ALL</a>
 			<a href="/pages/arxiv" class="sq-2">ARXIVE</a>
@@ -64,7 +73,7 @@
       <aside class="sidebar">
         <div class="logo">
           <a href="/">
-            <img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/header-logo-white.png?v=1784701125" alt="{{ shop.name }}" />
+            {% comment %} <img src="https://cdn.shopify.com/s/files/1/0968/9579/5505/files/header-logo-white.png?v=1784701125" alt="{{ shop.name }}" /> {% endcomment %}
           </a>
         </div>
         <nav class="menu">
@@ -78,6 +87,11 @@
 			<a href="https://www.instagram.com/primaryunion" target="_blank" class="sq-6">INSTAGRAM</a>
 			<a href="/pages/terms-of-service" class="sq-7 {% if page.handle == 'terms-of-service' %}active-link{% endif %}">TERMS OF SERVICE</a>
 			<a href="/pages/shipping-policy" class="sq-8 {% if page.handle == 'shipping-policy' %}active-link{% endif %}">SHIPPING POLICY</a>
+		</nav>
+		<nav class="menu">
+			<button class="sidebar-cart-btn cart-toggle">
+				CART [<span class="cart-count">{{ cart.item_count }}</span>]
+			</button>
 		</nav>
         <div class="bottom">
 			{% comment %} <div class="sidebar-info" id="sidebarInfo">
