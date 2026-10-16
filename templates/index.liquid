@@ -1,5 +1,6 @@
 {% assign collection = collections.all %}
 {% assign products = collection.products | sort: 'published_at' | reverse %}
+<div class="index-page">
 {% render 'banner' %}
 {% render 'topbar', title: 'ALL PRODUCTS' %}
 <div class="products">
@@ -39,3 +40,4 @@
   {% endfor %}
 </div>
 {% render 'bottom-banner' %}
+</div>

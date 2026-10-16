@@ -256,7 +256,7 @@ body {
 }
 
 .password-logo img {
-	max-height: 70px;
+	max-height: 90px;
 }
 
 .password-forms {
@@ -1934,4 +1934,46 @@ body {
 
 .box-shadow {
 	box-shadow: 2px 2px #111;
+}
+
+@media (min-width: 880px) and (max-width: 1200px) {
+	.page {
+		padding: 0 30px;
+	}
+}
+
+/* Smooth responsive layout transitions */
+@media (prefers-reduced-motion: no-preference) {
+	.page {
+		transition:
+			padding 250ms ease-in-out,
+			max-width 250ms ease-in-out;
+	}
+
+	.main {
+		transition: padding 250ms ease-in-out;
+	}
+
+	.sidebar {
+		transition:
+			width 250ms ease-in-out,
+			padding 250ms ease-in-out;
+	}
+
+	.products,
+	.archive-grid,
+	.product-page {
+		transition:
+			gap 250ms ease-in-out,
+			grid-template-columns 250ms ease-in-out;
+	}
+
+	.card,
+	.archive-item,
+	.product-images,
+	.product-info {
+		transition:
+			width 250ms ease-in-out,
+			max-width 250ms ease-in-out;
+	}
 }
